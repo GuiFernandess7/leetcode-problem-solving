@@ -24,6 +24,19 @@ fn maxSubsetSum(nums: &mut Vec<i32>, k: usize) -> i32 {
 }
 
 fn minArraySizeFromSum(target: i32, nums: Vec<i32>) -> i32 {
+    /* Calculates the minimum size of a subarray whose sum is at least a target value.
+
+    This function iterates through the `nums` vector and uses a sliding window approach to find
+    the smallest subarray size where the sum of elements is at least `target`.
+
+    Args:
+    - `target`: The target value that the sum of the subarray must reach or exceed.
+    - `nums`: A vector of integers from which we are searching for the subarray.
+
+    Returns:
+    - The minimum size of the subarray whose sum is greater than or equal to `target`. Returns 0
+    if no valid subarray size is found. */
+
     let mut min_arr_size = i32::MAX;
     let mut window_start = 0;
     let mut window_sum = 0;
