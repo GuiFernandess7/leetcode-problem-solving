@@ -1,13 +1,16 @@
-def totalFruit(fruits) -> int: # Not solved
+def totalFruit(fruits) -> int:
     baskets = {}
+    start = 0
+    max_size = 0
 
-    for fruit in fruits:
-        if fruit in baskets:
-            baskets[fruit] += 1
-        elif len(baskets) > 1:
-            break
+    for end in range(len(fruits)):
+        if end in baskets:
+            baskets[fruits[end]] = 1
         else:
-            baskets[fruit] = 1
+            baskets[fruits[end]] += 1
+
+        while len(baskets) > 2:
+            pass
 
     return baskets
 

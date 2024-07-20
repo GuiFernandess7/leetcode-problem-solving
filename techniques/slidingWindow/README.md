@@ -1,13 +1,4 @@
-Exercício 1: Máximo de Subarray com Tamanho Fixo
-
-Descrição: Dada uma lista de inteiros arr e um número inteiro k, encontre o valor máximo de cada subarray contíguo de tamanho k.
-
-Exemplo:
-
-arr = [1, 3, -1, -3, 5, 3, 6, 7]
-k = 3
-
-# Saída esperada: [3, 3, 5, 5, 6, 7]
+# Saída esperada: [3, 3, 5, 5, 6, 7] - SumMaxSubset
 
 Dica: Use uma deque para manter os índices dos elementos candidatos para o máximo.
 Exercício 2: Soma Máxima de Subarray com Tamanho Fixo
@@ -16,11 +7,10 @@ Descrição: Dada uma lista de inteiros arr e um número inteiro k, encontre a s
 
 Exemplo:
 
-
 arr = [2, 1, 5, 1, 3, 2]
 k = 3
 
-# Saída esperada: 9 (subarray [5, 1, 3])
+# Saída esperada: 9 (subarray [5, 1, 3]) - SubstringPalindrome
 
 Dica: Mantenha uma soma acumulada e atualize-a enquanto a janela deslizante se move.
 Exercício 3: Contagem de Palíndromos em Substrings de Tamanho Fixo
@@ -28,7 +18,6 @@ Exercício 3: Contagem de Palíndromos em Substrings de Tamanho Fixo
 Descrição: Dada uma string s e um número inteiro k, conte quantas substrings contíguas de tamanho k são palíndromos.
 
 Exemplo:
-
 
 s = "abbaacc"
 k = 4
@@ -42,7 +31,6 @@ Descrição: Dada uma lista de inteiros arr e um número inteiro k, encontre a s
 
 Exemplo:
 
-
 arr = [1, 2, 3, 4, 5]
 k = 11
 
@@ -54,7 +42,6 @@ Exercício 5: Substring com Caracteres Únicos
 Descrição: Dada uma string s e um número inteiro k, encontre a substring mais longa com exatamente k caracteres únicos.
 
 Exemplo:
-
 
 s = "araaci"
 k = 2
@@ -68,7 +55,6 @@ Descrição: Dada uma string s e um número inteiro k, encontre a distância má
 
 Exemplo:
 
-
 s = "abcababc"
 k = 3
 
@@ -80,7 +66,6 @@ Exercício 7: Subarray com Mínima Diferença
 Descrição: Dada uma lista de inteiros arr e um número inteiro k, encontre o subarray contíguo de tamanho k cuja soma é a mais próxima de um valor alvo target.
 
 Exemplo:
-
 
 arr = [1, 2, 3, 4, 5]
 k = 3
@@ -95,7 +80,6 @@ Descrição: Dada uma lista de inteiros arr e um número inteiro k, encontre o n
 
 Exemplo:
 
-
 arr = [1, 1, 1, 1, 1]
 k = 2
 
@@ -108,7 +92,6 @@ Descrição: Dada uma lista de inteiros arr e um número inteiro k, para cada po
 
 Exemplo:
 
-
 arr = [1, 3, 1, 2, 5, 4]
 k = 3
 
@@ -120,7 +103,6 @@ Exercício 10: Mínimo Elemento Distante
 Descrição: Dada uma lista de inteiros arr e um número inteiro k, para cada posição na lista, encontre o mínimo elemento em qualquer janela de tamanho k que inclui essa posição.
 
 Exemplo:
-
 
 arr = [1, 3, 1, 2, 5, 4]
 k = 3
