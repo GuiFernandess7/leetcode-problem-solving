@@ -1,5 +1,7 @@
 """Sum of continuos values within the array"""
 
+from typing import List
+
 def best_brute_force(prices, k): # O(nk)
     max_total = 0
 
@@ -47,5 +49,36 @@ def dynamic_sliding_window(target_sum, arr):
 
     return min_window_size
 
-prices = [15, 7, 31, 30, 21, 22, 19, 17, 24, 27, 50, 26, 33, 6, 22, 17, 42, 21, 17, 37, 49, 31, 37]
-print(dynamic_sliding_window(76, prices))
+
+# ==================================
+
+def findMaxAverage(nums: List[int], k: int) -> float:
+    max_avg = float('-inf')
+    current_sum = 0
+
+    for i in range(len(nums)):
+        current_sum += nums[i]
+
+        if (i >= k - 1):
+            new_avg = current_sum / k
+            max_avg = max(max_avg, new_avg)
+            current_sum -= nums[i- k + 1]
+
+    return max_avg
+
+def findMaxAverage2(nums: List[int], k: int) -> float:
+    max_avg = curr_sum = sum(nums[:k])
+
+    for i in range(k, len(nums)):
+        curr_sum = curr_sum - nums[i - k] + nums[i]
+        max_avg = max(curr_sum, max_avg)
+
+    return max_avg/k
+
+# ===================================
+
+
+prices = [1,12,-5,-6,50,3]
+
+#[15, 7, 31, 30, 21, 22, 19, 17, 24, 27, 50, 26, 33, 6, 22, 17, 42, 21, 17, 37, 49, 31, 37]
+print(findMaxAverage2(prices, k=4))
