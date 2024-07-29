@@ -75,10 +75,44 @@ def findMaxAverage2(nums: List[int], k: int) -> float:
 
     return max_avg/k
 
+prices = [1,12,-5,-6,50,3]
 # ===================================
 
+def maxSubstringSequence(nums: List[int]):
+    seen = {}
+    longest_seq = 0
+    start = 0
 
-prices = [1,12,-5,-6,50,3]
+    for end in range(len(nums)):
+        if nums[end] not in seen:
+            seen[nums[end]] = True
+            longest_seq = max(longest_seq, end - start + 1)
+        else:
+            while seen[nums[end]] in seen:
+                del seen[nums[end]]
+                start += 1
 
-#[15, 7, 31, 30, 21, 22, 19, 17, 24, 27, 50, 26, 33, 6, 22, 17, 42, 21, 17, 37, 49, 31, 37]
-print(findMaxAverage2(prices, k=4))
+        seen[nums[end]] = True
+
+    return longest_seq
+
+string = "abcabcbb"
+#print(maxSubstringSequence(string))
+
+# ==================================
+
+def missingNumber(nums: List[int]) -> int:
+    nums.sort()
+
+    if len(nums) == 2 and len(nums) not in nums:
+        return len(nums)
+
+    for i in range(len(nums)):
+        if i != nums[i]:
+            return i
+
+    return 0
+
+nums = [9,6,4,2,3,5,7,0,1]
+result = missingNumber(nums)
+print(result)
