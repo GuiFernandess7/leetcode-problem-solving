@@ -97,7 +97,6 @@ def maxSubstringSequence(nums: List[int]):
     return longest_seq
 
 string = "abcabcbb"
-#print(maxSubstringSequence(string))
 
 # ==================================
 
@@ -114,5 +113,31 @@ def missingNumber(nums: List[int]) -> int:
     return 0
 
 nums = [9,6,4,2,3,5,7,0,1]
-#result = missingNumber(nums)
-#print(result)
+
+#=================================
+
+def fruitIntoBackets(fruits: List[int]):
+    max_fruits = 0
+    seen = {}
+    start = 0
+
+    for end in range(len(fruits)):
+        if fruits[end] not in seen:
+            seen[fruits[end]] = 1
+        else:
+            seen[fruits[end]] += 1
+
+        while len(fruits) < 2:
+            left_fruit = fruits[start]
+            fruits[left_fruit] -= 1
+            if fruits[left_fruit] == 0:
+                del fruits[left_fruit]
+            start += 1
+
+        max_fruits = max(max_fruits, end - start + 1)
+
+    return max_fruits
+
+fruits = [1, 2, 1]
+result = fruitIntoBackets(fruits)
+print(result)
