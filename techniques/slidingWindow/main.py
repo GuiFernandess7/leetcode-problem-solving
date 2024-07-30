@@ -114,5 +114,5 @@ def missingNumber(nums: List[int]) -> int:
     return 0
 
 nums = [9,6,4,2,3,5,7,0,1]
-result = missingNumber(nums)
-print(result)
+#result = missingNumber(nums)
+#print(result)

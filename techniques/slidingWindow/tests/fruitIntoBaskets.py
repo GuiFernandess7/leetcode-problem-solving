@@ -1,23 +1,28 @@
 from typing import List
 
 def fruitsIntoB(fruits: List[int]) -> int:
-    seen = set()
+    seen = {}
     max_fruits = 0
     start = 0
 
     for i in range(len(fruits)):
-        if fruits[i] not in seen or len(seen) < 3:
-            seen.add(fruits[i])
-            max_fruits = max(max_fruits, i - start + 1)
+        if fruits[i] not in seen:
+            seen[fruits[i]] = 1
+        else:
+            seen[fruits[i]] += 1
 
-        elif len(seen) >= 3:
-            while fruits[i] in seen:
-                seen.remove(fruits[i])
-                start += 1
+        while len(seen) > 2:
+            start_f = fruits[start]
+            seen[start_f] -= 1
+            if seen[start_f] == 0:
+                del seen[start_f]
+            start += 1
+
+        max_fruits = max(max_fruits, i - start + 1)
 
     return max_fruits
 
 if __name__=="__main__":
-    fruits = [1, 2, 1]
+    fruits = [1,2,3,2,2]
     result = fruitsIntoB(fruits)
     print(result)
