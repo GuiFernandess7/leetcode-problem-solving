@@ -54,6 +54,7 @@ fn minArraySizeFromSum(target: i32, nums: Vec<i32>) -> i32 {
     return min_arr_size;
 }
 
+
 fn main() {
     let mut nums = vec![15, 7, 31, 30, 21, 22, 19, 17, 24, 27, 50, 26, 33, 6, 22, 17, 42, 21, 17, 37, 49, 31, 37];
     let mut maxSubset = maxSubsetSum(&mut nums, 3 as usize);
