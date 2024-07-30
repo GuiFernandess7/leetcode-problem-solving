@@ -139,5 +139,47 @@ def fruitIntoBackets(fruits: List[int]):
     return max_fruits
 
 fruits = [1, 2, 1]
-result = fruitIntoBackets(fruits)
-print(result)
+#result = fruitIntoBackets(fruits)
+#print(result)
+
+# ============================
+
+def string_permutation_attempt(s1: str, s2: str): # two pointer approach
+    from collections import Counter
+    has_permutation = False
+    s1 = Counter(s1)
+
+    mid = len(s2) // 2
+    right = mid
+    left = 0
+
+    while left < mid or right < len(s2):
+        if left < mid:
+            current_slice = s2[left:right+1]
+            left += 1
+        elif right < len(s2):
+            current_slice = s2[mid:right+1]
+            right += 1
+
+        if s1 == Counter(current_slice):
+            has_permutation = True
+
+    return has_permutation
+
+def string_permutation(s1: str, s2: str):
+    from collections import Counter
+    has_permutation = False
+    k = len(s1)
+    s1 = Counter(s1)
+
+    for right in range(len(s2)):
+        if right >= k - 1:
+            current_slice = s2[right - k + 1:right + 1]
+            if s1 == Counter(current_slice):
+                has_permutation = True
+
+    return has_permutation
+
+string = "eidbaooo"
+results = string_permutation("ba", string)
+print(results)
