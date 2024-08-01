@@ -116,7 +116,6 @@ def maxSubstringSequence2(nums: List[int]):
     return longest_substring
 
 string = "abcabcbb"
-print(maxSubstringSequence2(string))
 
 # ==================================
 
@@ -207,19 +206,25 @@ string = "eidbaooo"
 # ===============================
 
 def characterReplacement(s: str, k: int):
-    longest_substr = 0
     start = 0
-    max_length = 0
     seen = set()
+    s = list(s)
 
-    for end in range(len(s)):
-        while s[end] in seen:
-            seen.remove(s[end])
+    for end in range(len(s) - 1):
+        if s[end] not in seen:
+            seen.add(s[end])
+
+            if k >= 0 :
+                s[end] = s[start]
+                k -= 1
+
+        else:
+            while s[end] in seen:
+                seen.remove(s[end])
             start += 1
 
-        seen.add(s[end])
-
-    return max_length
+    return len(s[end - start + 1:end + 1])
 
 string = "AABABBA"
 result = characterReplacement(string, 2)
+print(result)
