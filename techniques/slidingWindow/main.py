@@ -205,26 +205,56 @@ string = "eidbaooo"
 
 # ===============================
 
-def characterReplacement(s: str, k: int):
+def characterReplacement_attempt(s: str, k: int):
     start = 0
-    seen = set()
-    s = list(s)
+    seen = {}
+    max_freq = 0
+    longest_substr = 0
 
-    for end in range(len(s) - 1):
+    for end in range(len(s)):
+
         if s[end] not in seen:
-            seen.add(s[end])
-
-            if k >= 0 :
-                s[end] = s[start]
-                k -= 1
-
+            seen[s[end]] = 1
         else:
-            while s[end] in seen:
-                seen.remove(s[end])
+            seen[s[end]] += 1
+
+        win_size = end - start + 1
+        max_freq = max(max_freq, seen[s[end]])
+        if win_size - max_freq <= k:
+            longest_substr = win_size
+        else:
+            seen[s[start]] -= 1
             start += 1
 
-    return len(s[end - start + 1:end + 1])
+    return longest_substr
 
-string = "AABABBA"
-result = characterReplacement(string, 2)
+def characterReplacement(s: str, k: int):
+    start = 0
+    seen = {}
+    max_freq = 0
+    longest_substr = 0
+
+    for end in range(len(s)):
+
+        if s[end] not in seen:
+            seen[s[end]] = 1
+        else:
+            seen[s[end]] += 1
+
+        max_freq = max(seen.values())
+        window_size = end - start + 1
+
+        while window_size - max_freq > k:
+            seen[s[start]] -= 1
+            if seen[s[start]] == 0:
+                del seen[s[start]]
+            start += 1
+            window_size = end - start + 1
+
+        longest_substr = max(longest_substr, window_size)
+
+    return longest_substr
+
+string = "AAABABB"
+result = characterReplacement(string, 1)
 print(result)
