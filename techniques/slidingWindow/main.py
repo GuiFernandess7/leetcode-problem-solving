@@ -12,6 +12,8 @@ def best_brute_force(prices, k): # O(nk)
     return max_total
 
 def sliding_window(prices, k): # O(n)
+    """Biggest Sum - Fixed Sliding Window"""
+
     total = sum(prices[:k])
     max_total = total
 
@@ -22,7 +24,8 @@ def sliding_window(prices, k): # O(n)
 
     return max_total
 
-def sliding_window_2(prices, k):
+def sliding_window_2(prices, k=3):
+    """Biggest sum - Fixed sliding window # 2"""
     max_value = float('-inf')
     current_sum = 0
 
@@ -35,6 +38,7 @@ def sliding_window_2(prices, k):
     return max_value
 
 def dynamic_sliding_window(target_sum, arr):
+    """Min size window with target sum"""
     min_window_size = float('inf')
     current_window_sum = 0
     window_start = 0
@@ -79,6 +83,7 @@ prices = [1,12,-5,-6,50,3]
 # ===================================
 
 def maxSubstringSequence(nums: List[int]):
+    """Max substring with non repeating characters"""
     seen = {}
     longest_seq = 0
     start = 0
@@ -96,7 +101,22 @@ def maxSubstringSequence(nums: List[int]):
 
     return longest_seq
 
+def maxSubstringSequence2(nums: List[int]):
+    charset = set()
+    longest_substring = 0
+    l = 0
+
+    for i in range(len(nums)):
+        while nums[i] in charset:
+            charset.remove(nums[i])
+            l += 1
+
+        charset.add(nums[i])
+        longest_substring = max(longest_substring, i - l + 1)
+    return longest_substring
+
 string = "abcabcbb"
+print(maxSubstringSequence2(string))
 
 # ==================================
 
@@ -181,5 +201,25 @@ def string_permutation(s1: str, s2: str):
     return has_permutation
 
 string = "eidbaooo"
-results = string_permutation("ba", string)
-print(results)
+#results = string_permutation("ba", string)
+#print(results)
+
+# ===============================
+
+def characterReplacement(s: str, k: int):
+    longest_substr = 0
+    start = 0
+    max_length = 0
+    seen = set()
+
+    for end in range(len(s)):
+        while s[end] in seen:
+            seen.remove(s[end])
+            start += 1
+
+        seen.add(s[end])
+
+    return max_length
+
+string = "AABABBA"
+result = characterReplacement(string, 2)
