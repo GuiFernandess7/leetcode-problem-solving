@@ -16,6 +16,8 @@
 
 - Fórmulas: | i >= k - 1 | & | nums[i - k + 1] |
 
+#
+
 * **Minimum Size Subarray Sum**
 
 **Parâmetros**: nums, target
@@ -31,6 +33,8 @@
         - Diminui a soma acumulada pelo primeiro valor da janela | nums[start] |
         - Fechar a janela na esquerda (start += 1)
     - Retornar o lenght minimum
+
+#
 
 * **Fruit Into Baskets**
 
@@ -55,6 +59,8 @@
     - Comparar a variavel de tamanho da janela com o tamanho atual |i - start + 1|
     - Retornar tamanho da janela
 
+#
+
 * **Permutation in String**
 
 **Parâmetros** : s1: str, s2: str
@@ -69,6 +75,8 @@
             - return True
 
     return False
+
+#
 
 * **Longest Repeating Character Replacement**
 
@@ -89,6 +97,8 @@
 
     - Compara o longest_substr com o tamanho da janela |longest_substr = max(longest_substr, end - start + 1)|
     - Retorna o tamanho da janela
+
+#
 
 * **Longest Substring Without Repeating Characters**
 
