@@ -1,6 +1,6 @@
 ## Padrões | Pseudocódigos [PT-BR] 🇧🇷
 
-* **Max Average Substring**
+### **Max Average Substring**
 
 **Parâmetros**: nums, k (tamanho da janela)
 
@@ -18,7 +18,7 @@
 
 #
 
-* **Minimum Size Subarray Sum**
+### **Minimum Size Subarray Sum**
 
 **Parâmetros**: nums, target
 
@@ -36,7 +36,7 @@
 
 #
 
-* **Fruit Into Baskets**
+### **Fruit Into Baskets**
 
 **Parâmetros**: fruits: List
 
@@ -61,7 +61,7 @@
 
 #
 
-* **Permutation in String**
+### **Permutation in String**
 
 **Parâmetros** : s1: str, s2: str
 
@@ -78,7 +78,7 @@
 
 #
 
-* **Longest Repeating Character Replacement**
+### **Longest Repeating Character Replacement**
 
 **Parâmetros**: s: str, k: int
 
@@ -100,7 +100,7 @@
 
 #
 
-* **Longest Substring Without Repeating Characters**
+### **Longest Substring Without Repeating Characters**
 
 **Parâmetros**: s: str
 
@@ -121,7 +121,7 @@
 
 ## Patterns | Pseudocodes [EN] 🇺🇸
 
-* **Max Average Substring**
+### **Max Average Substring**
 
 **Parameters**: nums, k (window size)
 
@@ -137,7 +137,7 @@
 
 - Formulas: | i >= k - 1 | & | nums[i - k + 1] |
 
-* **Minimum Size Subarray Sum**
+### **Minimum Size Subarray Sum**
 
 **Parameters**: nums, target
 
@@ -153,7 +153,7 @@
         - Close the window on the left (start += 1)
     - Return the minimum length
 
-* **Fruit Into Baskets**
+### **Fruit Into Baskets**
 
 **Parameters**: fruits: List
 
@@ -176,7 +176,7 @@
     - Compare the window size variable with the current size | i - start + 1 |
     - Return window size
 
-* **Permutation in String**
+### **Permutation in String**
 
 **Parameters**: s1: str, s2: str
 
@@ -191,7 +191,7 @@
 
     return False
 
-* **Longest Repeating Character Replacement**
+### **Longest Repeating Character Replacement**
 
 **Parameters**: s: str, k: int
 
@@ -212,7 +212,7 @@
     - Return the window size
 
 
-* **Longest Substring Without Repeating Characters**
+### **Longest Substring Without Repeating Characters**
 
 **Parameters**: s: str
 
