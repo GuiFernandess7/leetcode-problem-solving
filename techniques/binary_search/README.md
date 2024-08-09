@@ -41,3 +41,32 @@
         - r = m - 1
 
     - Retorna res
+
+#
+
+## Search in Rotated Sorted Array
+
+( https://leetcode.com/problems/search-in-rotated-sorted-array/description/ )
+
+- Inicializar ponteiro esquerdo l = 0
+- Inicializar ponteiro direito r = len(nums) - 1
+
+- Enquanto l <= r:
+    - Inicializar m: m = (l + r) // 2
+
+    - Se nums[m] igual a target:
+        - Retornar m
+
+    - Se nums[l] <= nums[m]:
+        - Se nums[l] <= target < nums[m]:
+            - Atualizar r = m - 1
+        - Caso contrário:
+            - Atualizar l = m + 1
+
+    - Caso contrário:
+        - Se nums[m] < target <= nums[r]:
+            - Atualizar l = m + 1
+        - Caso contrário:
+            - Atualizar r = m - 1
+
+- Retornar -1  // Target não encontrado
